@@ -4,7 +4,7 @@ public class UnixPath {
 
     char[] path;
 
-    public UnixPath(char[] path) {
+    public void setPath(char[] path) {
         this.path = path;
     }
 

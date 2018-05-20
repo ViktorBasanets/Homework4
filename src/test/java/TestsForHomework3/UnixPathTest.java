@@ -17,13 +17,28 @@ public class UnixPathTest {
 
     @Before
     public void init() {
-        char[] inputPath = "/a///..//////home/./c/".toCharArray();
-        unixPath = new UnixPath(inputPath);
+        unixPath = new UnixPath();
     }
 
     @Test
     public void testRightPathPositiveScenario() {
-        String expectedResult = Arrays.toString("/home/c".toCharArray());
+        char[] inputPath = "/home/c".toCharArray();
+        char[] outputPath = "/home/c".toCharArray();
+        unixPath.setPath(inputPath);
+
+        String expectedResult = Arrays.toString(outputPath);
+        String actualResult = Arrays.toString(unixPath.rightPath());
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void testRightPathNegativeScenario() {
+        char[] inputPath = "/a///..//////home/./c/".toCharArray();
+        char[] outputPath = "/home/c".toCharArray();
+        unixPath.setPath(inputPath);
+
+        String expectedResult = Arrays.toString(outputPath);
         String actualResult = Arrays.toString(unixPath.rightPath());
 
         assertEquals(expectedResult, actualResult);
