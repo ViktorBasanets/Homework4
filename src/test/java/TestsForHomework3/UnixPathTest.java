@@ -22,24 +22,19 @@ public class UnixPathTest {
 
     @Test
     public void testRightPathPositiveScenario() {
-        char[] outputPath = "/home/c".toCharArray();
-        unixPath.setPath("/home/c".toCharArray());
-
-        String expectedResult = Arrays.toString(outputPath);
-        String actualResult = Arrays.toString(unixPath.rightPath());
-
+        unixPath.setPath("/....".toCharArray());
+        unixPath.rightPath();
+        char expectedResult = '.';
+        char actualResult = unixPath.get(1);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRightPathNegativeScenario() {
-        char[] inputPath = "/a///..//////home/./c/".toCharArray();
-        char[] outputPath = "/home/c".toCharArray();
-        unixPath.setPath(inputPath);
-
-        String expectedResult = Arrays.toString(outputPath);
-        String actualResult = Arrays.toString(unixPath.rightPath());
-
+        unixPath.setPath("/a///..//////home/./c/".toCharArray());
+        unixPath.rightPath();
+        char expectedResult = 'e';
+        char actualResult = unixPath.get(4);
         assertEquals(expectedResult, actualResult);
     }
 }

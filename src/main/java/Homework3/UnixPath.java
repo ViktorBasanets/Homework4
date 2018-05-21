@@ -12,7 +12,7 @@ public class UnixPath {
         return path[index];
     }
 
-    public char[] rightPath() {
+    public void rightPath() {
         replace('/', 0);
         path = arrayMaker(path);
 
@@ -21,22 +21,9 @@ public class UnixPath {
 
         stayOn("/./".toCharArray(), 0);
         path = arrayMaker(path);
-
-        return path;
     }
 
-    @Override
-    public String toString() {
-        String result = "";
-
-        for(int i = 0; i < path.length; i++) {
-            result += path[i];
-        }
-
-        return result;
-    }
-
-    private void replace(char ch, int index) {
+     private void replace(char ch, int index) {
 
         if(index == path.length - 2) {
             return;
