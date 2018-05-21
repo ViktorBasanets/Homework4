@@ -17,25 +17,20 @@ public class RangesTest {
 
     @Before
     public void init() {
-        ranges = new Ranges();
+        int[] inputArray = {1, 2, 3, 5, 8, 9, 10, 13, 14, 15, 16};
+        ranges = new Ranges(inputArray);
     }
 
     @Test
     public void testRankWithPositiveScenario() {
-        int[] inputArray = {1, 2, 3, 5, 8, 9, 10, 13, 14, 15, 16};
-        ranges.setArray(inputArray);
-
         String expectedResult = "[1 3][5][8 10][13 16]";
         String actualResult = ranges.rank();
-
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRankWithNegativeScenario() {
-        int[] inputArray = {2, 1, 3, 5, 8, 9, 10, 13, 14, 15, 16};
-        ranges.setArray(inputArray);
-
+        ranges.set(8, 12);
         String expectedResult = null;
         String actualResult = ranges.rank();
 

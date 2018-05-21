@@ -4,8 +4,12 @@ public class Ranges {
 
     int[] array;
 
-    public void setArray(int[] array) {
+    public Ranges(int[] array) {
         this.array = array;
+    }
+
+    public void set(int index, int value) {
+        array[index] = value;
     }
 
     public String rank() {
@@ -31,7 +35,7 @@ public class Ranges {
 
     private boolean checkValidArray(int[] array) {
         for(int i = 0; i < array.length - 1; i++) {
-            if(array[i] > array[i + 1]) {
+            if (array[i] > array[i + 1]) {
                 return false;
             }
         }
