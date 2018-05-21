@@ -10,8 +10,8 @@ public class ReverseSubstring {
         this.array = array;
     }
 
-    public char[] getArray() {
-        return array;
+    public char get(int index) {
+        return array[index];
     }
 
     public void reverse(int from, int to) {

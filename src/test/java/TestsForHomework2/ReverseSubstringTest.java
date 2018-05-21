@@ -23,23 +23,17 @@ public class ReverseSubstringTest {
 
     @Test
     public void testReverseSubstringWithPositiveScenario() {
-        char[] outputArray = "abedcfg".toCharArray();
         reversedSubstring.reverse(2, 4);
-
-        String expectedResult = Arrays.toString(outputArray);
-        String actualResult = Arrays.toString(reversedSubstring.getArray());
-
+        char expectedResult = 'e';
+        char actualResult = reversedSubstring.get(2);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testReverseSubstringWithNegativeScenario() {
-        char[] outputArray = "abcdefg".toCharArray();;
         reversedSubstring.reverse(-1, 7);
-
-        String expectedResult = Arrays.toString(outputArray);
-        String actualResult = Arrays.toString(reversedSubstring.getArray());
-
+        char expectedResult = 'c';
+        char actualResult = reversedSubstring.get(2);
         assertEquals(expectedResult, actualResult);
     }
 }
