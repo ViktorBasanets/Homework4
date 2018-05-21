@@ -23,7 +23,6 @@ public class FrequencyOfCharTest {
     public void testCharFrequencyWithPositiveScenario() {
         int expectedResult = 10;
         int actualResult = frequencyOfChar.charFrequency('a');
-
         assertEquals(expectedResult, actualResult);
     }
 
@@ -31,7 +30,6 @@ public class FrequencyOfCharTest {
     public void testCharFrequencyWithNegativeScenario() {
         int expectedResult = 0;
         int actualResult = frequencyOfChar.charFrequency('b');
-
         assertEquals(expectedResult, actualResult);
     }
 }
