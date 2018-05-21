@@ -17,33 +17,24 @@ public class RestoreArrayTest {
 
     @Before
     public void init() {
-        restoreArray = new RestoreArray();
+        int[] inputArray = {1, 2, -1, 4, 7, 6, -2, 4};
+        restoreArray = new RestoreArray(inputArray);
     }
 
     @Test
     public void testRestoreArrayWithPositiveScenario() {
-        int[] inputArray = {1, 2, -1, 4, 7, 6, -2, 4};
-        int[] outputArray = {1, 2, 3, 4, 7, 6, 5, 4};
-
-        restoreArray.setArray(inputArray);
         restoreArray.restoreArray();
-
-        String expectedResult = Arrays.toString(outputArray);
-        String actualResult = restoreArray.toString();
-
+        int expectedResult = 3;
+        int actualResult = restoreArray.get(2);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRestoreArrayWithNegativeScenario() {
-        int[] inputArray = {1, 2, -1, -4, 7, 6, -2, 4};
-
-        restoreArray.setArray(inputArray);
+        restoreArray.set(3, -4);
         restoreArray.restoreArray();
-
-        String expectedResult = Arrays.toString(inputArray);
-        String actualResult = restoreArray.toString();
-
+        int expectedResult = -1;
+        int actualResult = restoreArray.get(2);
         assertEquals(expectedResult, actualResult);
     }
 }

@@ -6,8 +6,16 @@ public class RestoreArray {
 
     int [] array;
 
-    public void setArray(int[] array) {
+    public RestoreArray(int[] array) {
         this.array = array;
+    }
+
+    public void set(int index, int value) {
+        array[index] = value;
+    }
+
+    public int get(int index) {
+        return array[index];
     }
 
     public void restoreArray() {
@@ -47,8 +55,5 @@ public class RestoreArray {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return Arrays.toString(array);
-    }
+
 }
