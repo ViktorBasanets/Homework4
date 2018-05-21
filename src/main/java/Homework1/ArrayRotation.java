@@ -1,13 +1,15 @@
 package Homework1;
 
-import java.util.Arrays;
-
 public class ArrayRotation {
 
     int[] array;
 
-    public void setArray(int[] array) {
+    public ArrayRotation(int[] array) {
         this.array = array;
+    }
+
+    public int get(int index) {
+        return array[index];
     }
 
     public void rotate(int k) {
@@ -30,10 +32,5 @@ public class ArrayRotation {
         for(int i = 0; i < temp.length; i++) {
             array[array.length - k + i] = temp[i];
         }
-    }
-
-    @Override
-    public String toString() {
-        return Arrays.toString(array);
     }
 }

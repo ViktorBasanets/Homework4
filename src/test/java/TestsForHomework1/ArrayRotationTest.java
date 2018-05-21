@@ -17,33 +17,23 @@ public class ArrayRotationTest {
 
     @Before
     public void init() {
-        arrayRotation = new ArrayRotation();
+        int[] inputArray = {5, 6, 1, 2, 6};
+        arrayRotation = new ArrayRotation(inputArray);
     }
 
     @Test
     public void testRotationArrayWithPositiveScenario() {
-        int[] inputArray = new int[] {5, 6, 1, 2, 6};
-        int[] outputArray = new int[]{1, 2, 6, 5, 6};
-
-        arrayRotation.setArray(inputArray);
         arrayRotation.rotate(2);
-
-        String expectedResult = Arrays.toString(outputArray);
-        String actualResult = arrayRotation.toString();
-
+        int expectedResult = 1;
+        int actualResult = arrayRotation.get(0);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void testRotationArrayWithNegativeScenario() {
-        int[] inputArray = new int[] {5, 6, 1, 2, 6};
-
-        arrayRotation.setArray(inputArray);
         arrayRotation.rotate(-2);
-
-        String expectedResult = Arrays.toString(inputArray);
-        String actualResult = arrayRotation.toString();
-
+        int expectedResult = 5;
+        int actualResult = arrayRotation.get(0);
         assertEquals(expectedResult, actualResult);
     }
 }
