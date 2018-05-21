@@ -8,6 +8,10 @@ public class UnixPath {
         this.path = path;
     }
 
+    public char get(int index) {
+        return path[index];
+    }
+
     public char[] rightPath() {
         replace('/', 0);
         path = arrayMaker(path);

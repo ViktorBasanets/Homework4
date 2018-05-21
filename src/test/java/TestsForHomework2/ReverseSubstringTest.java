@@ -17,7 +17,7 @@ public class ReverseSubstringTest {
 
     @Before
     public void init() {
-        char[] inputArray = "abcdefg".toCharArray();;
+        char[] inputArray = "abcdefg".toCharArray();
         reversedSubstring = new ReverseSubstring(inputArray);
     }
 

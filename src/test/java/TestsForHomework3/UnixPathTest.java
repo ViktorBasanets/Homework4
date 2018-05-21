@@ -22,9 +22,8 @@ public class UnixPathTest {
 
     @Test
     public void testRightPathPositiveScenario() {
-        char[] inputPath = "/home/c".toCharArray();
         char[] outputPath = "/home/c".toCharArray();
-        unixPath.setPath(inputPath);
+        unixPath.setPath("/home/c".toCharArray());
 
         String expectedResult = Arrays.toString(outputPath);
         String actualResult = Arrays.toString(unixPath.rightPath());
